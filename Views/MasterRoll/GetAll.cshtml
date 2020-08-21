@@ -1,0 +1,190 @@
+﻿@model IEnumerable<IRB.Models.MasterRollModel>
+
+@{
+    ViewData["Title"] = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GetAll</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.PISNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NextOfKin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressPatelat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BloodGroup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MobileNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmergencyContactNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaritialStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Education)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlaceofPosting)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailAdd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RelationwithNextofKin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Religion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Wef)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdharNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PanNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FatherName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.PISNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NextOfKin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressPatelat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BloodGroup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmergencyContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaritialStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Education)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaceofPosting)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAdd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RelationwithNextofKin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Religion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            @*</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Wef)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdharNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PanNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FatherName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,293 @@
+﻿@model IRB.Models.MasterRollModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="box">
+        <div>
+            <div class="row text-white" style="padding:0px 0px 0px 0px">
+                <div class="col-md-5 bg-success"></div>
+                <div class="col-md-2 align-content-center bg-success ">
+                    <h4>MasterRoll</h4>
+                </div>
+                <div class="col-md-5 bg-success">
+                    @if (@ViewBag.Message != null)
+                    {
+                        <div class="alert alert-success alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <div class="text-danger"><strong>@ViewBag.Message</strong></div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-12">
+                    <form enctype="multipart/form-data" asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label asp-for="PISNo" class="control-label"></label>
+                                        <input asp-for="PISNo" class="form-control" />
+                                        <span asp-validation-for="PISNo" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Rank" class="control-label"></label>
+                                        <select asp-for="Rank" class="form-control" asp-items="@Html.GetEnumSelectList<IRB.Data.Ennum.rank>()">
+                                            <option>Select a Rank</option>
+                                        </select>
+                                        <span asp-validation-for="Rank" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 boarder:1px">
+                                        <img href="" />
+                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Name" class="control-label"></label>
+                                    <input asp-for="Name" class="form-control" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Coy" class="control-label"></label>
+                                    <select asp-for="Coy" class="form-control" asp-items="@Html.GetEnumSelectList<IRB.Data.Ennum.coy>()">
+                                        <option>Select a Coy</option>
+                                    </select>
+                                    <span asp-validation-for="Coy" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="NextOfKin" class="control-label"></label>
+                                    <input asp-for="NextOfKin" class="form-control" />
+                                    <span asp-validation-for="NextOfKin" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="RelationwithNextofKin" class="control-label"></label>
+                                    <select asp-for="RelationwithNextofKin" class="form-control" asp-items="@Html.GetEnumSelectList<IRB.Data.Ennum.relationShip>()">
+                                        <option>Select a Relationship</option>
+                                    </select>
+                                    <span asp-validation-for="RelationwithNextofKin" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Address1" class="control-label"></label>
+                                    <input asp-for="Address1" class="form-control" />
+                                    <span asp-validation-for="Address1" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="AddressPatelat" class="control-label"></label>
+                                    <select asp-for="AddressPatelat" class="form-control" asp-items="@Html.GetEnumSelectList<IRB.Data.Ennum.patelat>()">
+                                        <option>Select a Patel</option>
+                                    </select><span asp-validation-for="AddressPatelat" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="AddressState" class="control-label"></label>
+                                    <select asp-for="AddressState" class="form-control" asp-items="@Html.GetEnumSelectList<IRB.Data.Ennum.state>()">
+                                        <option>Select a State</option>
+                                    </select>
+                                    <span asp-validation-for="AddressState" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="BloodGroup" class="control-label"></label>
+                                    <select asp-for="BloodGroup" class="form-control" asp-items="@Html.GetEnumSelectList<IRB.Data.Ennum.bloodGroup>()">
+                                        <option>Select a Blood Group</option>
+                                    </select>
+                                    <span asp-validation-for="BloodGroup" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Doj" class="control-label"></label>
+                                    <input asp-for="Doj" class="form-control" />
+                                    <span asp-validation-for="Doj" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="MobileNo" class="control-label"></label>
+                                    <input asp-for="MobileNo" class="form-control" />
+                                    <span asp-validation-for="MobileNo" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="EmergencyContactNo" class="control-label"></label>
+                                    <input asp-for="EmergencyContactNo" class="form-control" />
+                                    <span asp-validation-for="EmergencyContactNo" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="MaritialStatus" class="control-label"></label>
+                                    <select asp-for="MaritialStatus" class="form-control" asp-items="@Html.GetEnumSelectList<IRB.Data.Ennum.martialStatus>()">
+                                        <option>Select a MartialStatus</option>
+                                    </select>
+                                    <span asp-validation-for="MaritialStatus" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Education" class="control-label"></label>
+                                    <select asp-for="Education" class="form-control" asp-items="@Html.GetEnumSelectList<IRB.Data.Ennum.education>()">
+                                        <option>Select a Education</option>
+                                    </select>
+                                    <span asp-validation-for="Education" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="PlaceofPosting" class="control-label"></label>
+                                    <select asp-for="PlaceofPosting" class="form-control" asp-items="@Html.GetEnumSelectList<IRB.Data.Ennum.placeOfPosting>()">
+                                        <option>Select a Place of Posting</option>
+                                    </select>
+                                    <span asp-validation-for="PlaceofPosting" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="EmailAdd" class="control-label"></label>
+                                    <input asp-for="EmailAdd" class="form-control" />
+                                    <span asp-validation-for="EmailAdd" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="DoB" class="control-label"></label>
+                                    <input asp-for="DoB" class="form-control" />
+                                    <span asp-validation-for="DoB" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Category" class="control-label"></label>
+                                    <select asp-for="Category" class="form-control" asp-items="@Html.GetEnumSelectList<IRB.Data.Ennum.category>()">
+                                        <option>Select a category</option>
+                                    </select>
+                                    <span asp-validation-for="Category" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Religion" class="control-label"></label>
+                                    <select asp-for="Religion" class="form-control" asp-items="@Html.GetEnumSelectList<IRB.Data.Ennum.religion>()">
+                                        <option>Select a Religion</option>
+                                    </select>
+                                    <span asp-validation-for="Religion" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Status" class="control-label"></label>
+                                    <input asp-for="Status" class="form-control" />
+                                    <span asp-validation-for="Status" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="ProfilePic" class="control-label"></label>
+                                    <div class="custom-file">
+                                        <input asp-for="ProfilePic" class="custom-file-input" id="inputGroupFile02">
+                                        <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                                    </div>
+                                    <span asp-validation-for="ProfilePic" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                        <label asp-for="ImageUrl" class="control-label"></label>
+                                        <input asp-for="ImageUrl" class="form-control" />
+                                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Wef" class="control-label"></label>
+                                    <input asp-for="Wef" class="form-control" />
+                                    <span asp-validation-for="Wef" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="AdharNo" class="control-label"></label>
+                                    <input asp-for="AdharNo" class="form-control" />
+                                    <span asp-validation-for="AdharNo" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="PanNo" class="control-label"></label>
+                                    <input asp-for="PanNo" class="form-control" />
+                                    <span asp-validation-for="PanNo" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="FatherName" class="control-label"></label>
+                                    <input asp-for="FatherName" class="form-control" />
+                                    <span asp-validation-for="FatherName" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="submit" value="Save" class="btn btn-success" />
+                                    <input type="submit" asp-action="FindAll" value="ViewList" class="btn btn-danger" />
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <a asp-action="EditMasterRollDetails">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
